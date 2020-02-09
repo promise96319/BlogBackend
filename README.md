@@ -1,4 +1,4 @@
-# blog-backend
+# blog-backend (`egg.js`）
 
 博客后台接口
 
