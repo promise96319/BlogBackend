@@ -3,9 +3,15 @@
 const Controller = require('egg').Controller;
 
 class ArticleController extends Controller {
-  async index() {
+  
+  async index(title) {
     const { ctx } = this;
     ctx.body = 'admin';
+    return 1
+  }
+
+  async getArticleList() {
+    
   }
 }
 
