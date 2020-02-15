@@ -4,19 +4,21 @@ class CarouselController extends Controller {
   /**
    * 获取轮播图列表
    * method: GET
-   * path:   /api/carousels
+   * path:   /api/admin/carousels
    *
    * return: [{}]
    */
   async getCarouselList() {
-    const result = await this.app.mysql.select('carousel')
+    const result = await this.app.mysql.select('carousel', {
+      orders: [['order_number', 'desc'], ['id', 'desc']], 
+    })
     this.ctx.body = result
   }
 
   /**
    * 添加 / 更新轮播图
    * method: POST
-   * path:   /api/carousels
+   * path:   /api/admin/carousels
    *
    * params: [...[, id: 1]]
    */
@@ -39,12 +41,12 @@ class CarouselController extends Controller {
   /**
    * 根据 ID 删除轮播图
    * method: DELETE
-   * path:   /api/carousels/id
+   * path:   /api/admin/carousels
+   * 
    */
   async deleteCarouselByID() {
-    const id = this.ctx.request.query
+    const id = this.ctx.request.body.id
     const result = await this.app.mysql.delete('carousel', { id })
-    console.log(result);
     const deleteSuccess = result.affectedRows === 1
     this.ctx.body = { deleteSuccess }
   }

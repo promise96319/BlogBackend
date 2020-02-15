@@ -1,4 +1,4 @@
-'use strict';
+'use strict'
 
 /** @type Egg.EggPlugin */
 module.exports = {
@@ -10,6 +10,14 @@ module.exports = {
   // 链接 MySQL
   mysql: {
     enable: true,
-    package: 'egg-mysql',
-  }
-};
+    package: 'egg-mysql'
+  },
+  cors: {
+    enable: true,
+    package: 'egg-cors'
+  },
+  jwt: {
+    enable: true,
+    package: 'egg-jwt'
+  },
+}

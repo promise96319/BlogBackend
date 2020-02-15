@@ -1,4 +1,4 @@
 module.exports = app => {
   const { router, controller } = app
-  router.get('/api/article', controller.client.article.index)
+  router.get('/api/carousels', controller.client.carousel.getCarouselList)
 }
