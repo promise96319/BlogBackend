@@ -14,8 +14,8 @@ module.exports = app => {
   router.get('/api/admin/tags', jwt, controller.admin.tag.getTagList)
   router.post('/api/admin/tags', jwt, controller.admin.tag.editTag)
 
-  router.get('/api/admin/articles', controller.admin.article.getArticleList)
-  router.post('/api/admin/articles', controller.admin.article.editArticle)
+  router.get('/api/admin/articles', jwt, controller.admin.article.getArticleList)
+  router.post('/api/admin/articles', jwt, controller.admin.article.editArticle)
   
   // router.post('/api/admin/tags', jwt, controller.admin.tag.editTag)
   // router.post('/api/admin/tags', jwt, controller.admin.tag.editTag)

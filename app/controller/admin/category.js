@@ -1,6 +1,6 @@
 const Controller = require('egg').Controller
 
-class CetegoryController extends Controller {
+class CategoryController extends Controller {
 
   /**
    * 获取文章分类列表
@@ -41,4 +41,4 @@ class CetegoryController extends Controller {
   }
 }
 
-module.exports = CetegoryController
+module.exports = CategoryController

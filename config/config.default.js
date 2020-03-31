@@ -43,10 +43,10 @@ module.exports = appInfo => {
       csrf: {
         enable: false
       },
-      domainWhiteList: ['http://localhost:8001']
+      domainWhiteList: ['http://localhost:8090', 'http://localhost:3000']
     },
     cors: {
-      origin: 'http://localhost:8001',
+      origin: '*',
       credentials: true,
       allowMethods: 'GET,HEAD,PUT,POST,DELETE,PATCH,OPTIONS'
     },

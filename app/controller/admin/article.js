@@ -17,7 +17,6 @@ class ArticleController extends Controller {
    */
   async getArticleList() {
     const { ctx, app } = this
-    
     const { id, categoryID, tagID } = ctx.query
 
     let sql = ''
@@ -150,7 +149,6 @@ class ArticleController extends Controller {
 
     const result = await app.mysql.query(sql)
     if (id) {
-      console.log('========2');
       let dealResult = result.map((item, index) => {
         // 将 tags 字符串转化成数组
         if (item.tags) {
@@ -158,8 +156,6 @@ class ArticleController extends Controller {
         } else {
           item.tags = []
         } 
-        
-        console.log(item.tags_id);
         
         if (item.tags_id) {
           item.tags_id = item.tags_id.split(',').map(item => Number(item))
